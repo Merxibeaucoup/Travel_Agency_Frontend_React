@@ -1,8 +1,13 @@
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import Header from "../components/Header";
+import Model from "../components/Model";
+import ModelContext from "../context/ModelContext";
 
 const Home = () => {
+  const { state: ss, dispatch, openModel } = useContext(ModelContext);
+  console.log("Home Page:", ss);
   const [state] = useState({
     heading: "we are travel friends",
     paragraph:
@@ -11,8 +16,11 @@ const Home = () => {
   return (
     <>
       <Header heading={state.heading} paragraph={state.paragraph}>
-        <button className="btn-default">Get Started</button>
+        <button className="btn-default" onClick={openModel}>
+          Get Started
+        </button>
       </Header>
+      <Model />
     </>
   );
 };
