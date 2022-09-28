@@ -1,25 +1,20 @@
 import React from "react";
 import { useContext } from "react";
 import ModelContext from "../context/ModelContext";
+import { CLOSE_MODEL } from "../context/types/ModelTypes";
 
-const Model = () => {
-  const { state, dispatch, closeModel } = useContext(ModelContext);
+const Model = (props) => {
+  const { state, dispatch } = useContext(ModelContext);
   const close = (e) => {
     // if clickd outside the box , fire closeModel function
     if (e.target.getAttribute("class") === "model") {
-      closeModel();
+      dispatch({ type: CLOSE_MODEL });
     }
   };
   // if modelStatus is true .. return UI
-  return state.modelStatus ? (
+  return state.modelStatus && state.current === props.current ? (
     <div className="model" onClick={close}>
-      <div className="model__body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-        voluptates pariatur repellat sint itaque neque temporibus totam earum
-        odio facilis quae ratione magnam, similique, iste nemo saepe, suscipit
-        quam corporis? Nulla similique est quae iste illo ipsum dolores
-        explicabo cupiditate.
-      </div>
+      <div className="model__body">{props.children}</div>
     </div>
   ) : (
     ""
