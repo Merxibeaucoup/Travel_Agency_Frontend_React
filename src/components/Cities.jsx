@@ -18,7 +18,7 @@ const Cities = ({ cities, name }) => {
                     </div>
                   </div>
                 ))
-              : `No cities in ${name}`}
+              : `There are No cities in ${name}`}
           </div>
         </div>
       </div>
