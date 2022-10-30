@@ -10,8 +10,8 @@
 
 @mixin align($flex, $justify-content, $align-items, $height) {
   display: $flex;
-  align-items: $align-items;
   justify-content: $justify-content;
+  align-items: $align-items;
   height: $height;
 }
 
@@ -63,4 +63,13 @@
   height: $height;
   margin-top: $mt;
   transition: all 0.4s linear;
+}
+
+@mixin status($bg, $color) {
+  padding: 0.6rem 1.3rem;
+  background-color: $bg;
+  color: $color;
+  border-radius: 0.6rem;
+  font-size: 1.3rem;
+  text-transform: capitalize;
 }
