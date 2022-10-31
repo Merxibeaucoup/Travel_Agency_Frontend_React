@@ -6,7 +6,7 @@ import { DETAILS, CITIES } from "../context/types/DestinationTypes";
 import Header from "../components/Header";
 import { Helmet } from "react-helmet-async";
 import DestinationInfo from "../components/DestinationInfo";
-import Cities from "../components/Cities";
+import Cities from "../components/cities/Cities";
 const Details = () => {
   const { destinationsData, dispatch } = useContext(DestinationsContext);
 
@@ -19,6 +19,7 @@ const Details = () => {
   useEffect(() => {
     dispatch({ type: DETAILS, payload: id });
     dispatch({ type: CITIES, payload: id });
+    window.scrollTo(0, 0);
   }, [id]);
 
   return (
