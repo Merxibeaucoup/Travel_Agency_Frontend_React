@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Header = ({ heading, paragraph, children, image }) => {
@@ -8,11 +10,18 @@ const Header = ({ heading, paragraph, children, image }) => {
     poster: "/assets/images/screen.png",
     logo: "/assets/images/logo.png",
   });
+
+  const navigate = useNavigate();
+
   return (
     <div className="header">
       <div className="container pr">
         <div className="header__logo">
-          <img src={state.logo} alt="logo" />
+          <LazyLoadImage
+            src={state.logo}
+            alt="logo"
+            onClick={() => navigate("/")}
+          />
         </div>
       </div>
       <div className="header__video">
