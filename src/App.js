@@ -12,6 +12,7 @@ import Nav from "./components/Nav";
 import GalleryProvider from "./context/providers/GalleryProvider";
 import NavProvider from "./context/providers/NavProvider";
 import SharedProvider from "./context/providers/SharedProvider";
+import AnimationsProvider from "./context/providers/AnimationsProvider";
 import Toggle from "./components/Toggle";
 const App = () => {
   return (
@@ -21,18 +22,20 @@ const App = () => {
           <GalleryProvider>
             <DestinationsProvider>
               <SharedProvider>
-                <Toggle />
-                <Nav />
-                <HelmetProvider>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/details/:id" element={<Details />} />
-                    {/* Not found should always be at the end  */}
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </HelmetProvider>
+                <AnimationsProvider>
+                  <Toggle />
+                  <Nav />
+                  <HelmetProvider>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/contact" element={<Contact />} />
+                      <Route path="/details/:id" element={<Details />} />
+                      {/* Not found should always be at the end  */}
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </HelmetProvider>
+                </AnimationsProvider>
               </SharedProvider>
             </DestinationsProvider>
           </GalleryProvider>

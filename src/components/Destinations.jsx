@@ -19,10 +19,12 @@ const Destinations = () => {
       <div className="container">
         <div className="row ml-minus-15 mr-minus-15">
           <div className="col-6 p-15">
-            <h3 className="destinations__heading">{state.heading}</h3>
+            <h3 className="destinations__heading animation">{state.heading}</h3>
           </div>
           <div className="col-6 p-15">
-            <p className="destinations__paragraph">{state.paragraph}</p>
+            <p className="destinations__paragraph animation">
+              {state.paragraph}
+            </p>
           </div>
         </div>
         <div className="destinations__block">

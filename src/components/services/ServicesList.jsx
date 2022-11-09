@@ -11,7 +11,7 @@ const ServicesList = ({ services }) => {
 
   return services.length > 0
     ? services.map((service, index) => (
-        <div className="services__list" key={index}>
+        <div className="services__list animation" key={index}>
           <h4
             className={`services__list__heading ${
               current === index
