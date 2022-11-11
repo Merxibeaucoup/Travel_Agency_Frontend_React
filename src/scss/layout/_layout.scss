@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+@use "sass:math";
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -6,5 +8,33 @@
 @for $i from 1 through 12 {
   .col-#{$i} {
     width: 100% / 12 * $i;
+    @if $i ==6 {
+      @include responsive(small) {
+        width: 100%;
+      }
+    }
+
+    @if $i ==3 {
+      @include responsive(medium) {
+        width: 100% /12 * 4;
+        // width: math.div(100%, 12) * $i;
+      }
+      @include responsive(small) {
+        width: 50%;
+        // width: math.div(100%, 12) * $i;
+      }
+      @include responsive(xsmall) {
+        width: 100%;
+        // width: math.div(100%, 12) * $i;
+      }
+    }
+    @if $i == 4 {
+      @include responsive(medium) {
+        width: 50%;
+      }
+      @include responsive(xsmall) {
+        width: 100%;
+      }
+    }
   }
 }

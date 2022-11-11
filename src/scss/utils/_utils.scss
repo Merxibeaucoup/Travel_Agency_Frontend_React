@@ -3,6 +3,24 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  @include responsive(large) {
+    max-width: 100%;
+    padding: 0 5rem;
+  }
+  @include responsive(medium) {
+    max-width: 100%;
+    padding: 0 4rem;
+  }
+  @include responsive(small) {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
+  @include responsive(xsmall) {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
 }
 
 .pr {
