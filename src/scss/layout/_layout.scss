@@ -36,5 +36,11 @@
         width: 100%;
       }
     }
+
+    @if $i ==8 {
+      @include responsive(medium) {
+        width: 100%;
+      }
+    }
   }
 }

@@ -92,6 +92,10 @@
   // weird angle
   transform: rotate(-2deg);
   text-transform: capitalize;
+
+  @include responsive(xsmall) {
+    font-size: 1.8rem;
+  }
 }
 
 .animation {
